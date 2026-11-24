@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SecureCheck - Analyze password strength and generate secure passwords.">
+    <title>SecureCheck | Password Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <span class="logo-icon">S</span>
+            Secure<span>Check</span>
+        </a>
+        <div class="nav-right">
+            <span class="privacy"><span class="privacy-dot"></span> 100% Private</span>
+        </div>
+    </nav>
+
+    <main class="main-container">
+
+        <section class="hero">
+            <div class="eyebrow">
+                <span>✦</span> PASSWORD SECURITY TOOL
+            </div>
+
+            <h1>Make your passwords<br>
+                <span>unbreakable.</span>
+            </h1>
+
+            <p class="hero-text">
+                Analyze your password strength, identify security
+                weaknesses, and generate stronger passwords in seconds.
+            </p>
+        </section>
+
+        <section class="analyzer-card">
+
+            <div class="card-header">
+                <div>
+                    <h2>Password Analyzer</h2>
+                    <p>Enter a password to check its security level.</p>
+                </div>
+                <div class="shield">♢</div>
+            </div>
+
+            <label for="password">YOUR PASSWORD</label>
+
+            <div class="password-wrapper">
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password..."
+                    autocomplete="new-password"
+                    spellcheck="false"
+                >
+                <button type="button" id="toggleBtn" class="icon-btn" aria-label="Show password">
+                    ◉
+                </button>
+            </div>
+
+            <div class="strength-heading">
+                <span>STRENGTH LEVEL</span>
+                <span id="strengthText">Not tested</span>
+            </div>
+
+            <div class="strength-track">
+                <div id="strengthBar"></div>
+            </div>
+
+            <div class="score-row">
+                <span id="scoreText">0 / 100</span>
+                <span id="timeText">Enter a password to begin</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="requirements-heading">
+                <h3>Security Requirements</h3>
+                <span id="requirementCount">0 / 6 completed</span>
+            </div>
+
+            <div class="requirements-grid">
+                <div class="requirement" id="req-length">
+                    <span class="check">✓</span>
+                    At least 8 characters
+                </div>
+
+                <div class="requirement" id="req-upper">
+                    <span class="check">✓</span>
+                    Uppercase letter (A-Z)
+                </div>
+
+                <div class="requirement" id="req-lower">
+                    <span class="check">✓</span>
+                    Lowercase letter (a-z)
+                </div>
+
+                <div class="requirement" id="req-number">
+                    <span class="check">✓</span>
+                    Number (0-9)
+                </div>
+
+                <div class="requirement" id="req-special">
+                    <span class="check">✓</span>
+                    Special character (!@#$)
+                </div>
+
+                <div class="requirement" id="req-unique">
+                    <span class="check">✓</span>
+                    No repeated patterns
+                </div>
+            </div>
+
+            <div class="suggestion-box" id="suggestionBox">
+                <span class="suggestion-icon">✦</span>
+                <div>
+                    <strong>Security Tip</strong>
+                    <p id="suggestionText">
+                        Use a long, unique password with a mix of characters.
+                    </p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="generator-heading">
+                <div>
+                    <h3>Generate a Strong Password</h3>
+                    <p>Create a random password using secure randomness.</p>
+                </div>
+            </div>
+
+            <div class="generator-controls">
+                <div>
+                    <label for="passwordLength">PASSWORD LENGTH</label>
+                    <select id="passwordLength">
+                        <option value="12">12 characters</option>
+                        <option value="16" selected>16 characters</option>
+                        <option value="20">20 characters</option>
+                        <option value="24">24 characters</option>
+                        <option value="32">32 characters</option>
+                    </select>
+                </div>
+
+                <button type="button" id="generateBtn" class="generate-btn">
+                    ✦ Generate Password
+                </button>
+            </div>
+
+            <div class="generated-wrapper">
+                <input type="text" id="generatedPassword"
+                    placeholder="Your generated password appears here"
+                    readonly>
+                <button type="button" id="copyBtn" class="copy-btn">
+                    Copy
+                </button>
+            </div>
+
+            <p id="copyMessage" class="copy-message" aria-live="polite"></p>
+
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <div class="feature-icon">⌁</div>
+                <h3>Instant Analysis</h3>
+                <p>Get real-time feedback as you type.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">♢</div>
+                <h3>Privacy First</h3>
+                <p>Your password stays in your browser.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">✧</div>
+                <h3>Secure Generator</h3>
+                <p>Create random passwords with Web Crypto.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 SecureCheck. Built for better digital security.</p>
+        <p>Your password is never uploaded or stored.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
